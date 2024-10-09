@@ -2,7 +2,8 @@
     <x-breadcrumbs class="mb-4" :links="['Jobs' => route('jobs.index')]"/>
 
     <x-card class="mb-4 text-sm">
-        <div class="mb-4 grid grid-cols-2 gap-4">
+        <form action="{{ route('jobs.index') }}" method="GET">
+            <div class="mb-4 grid grid-cols-2 gap-4">
             <div class="">
                 <div class="mb-1 font-semibold">Search</div>
                 <x-text-input name="search" value="" placeholder="Search for any text"/>
@@ -18,6 +19,9 @@
             <div class="">3</div>
             <div class="">4</div>
         </div>
+
+            <button class="w-full">Filter</button>
+        </form>
     </x-card>
 
     @foreach($jobs as $job)
